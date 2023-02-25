@@ -1,8 +1,13 @@
+attrs==22.2.0
+jsonschema==4.17.3
+log-generator==1.0.2
 numpy==1.24.1
 pandas==1.5.3
 py4j==0.10.9.5
 pyarrow==11.0.0
+pyrsistent==0.19.3
 pyspark==3.3.1
 python-dateutil==2.8.2
 pytz==2022.7.1
+PyYAML==6.0
 six==1.16.0
