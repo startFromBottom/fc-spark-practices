@@ -23,7 +23,7 @@ def load_data(ss: SparkSession, from_file, schema):
 if __name__ == "__main__":
     ss: SparkSession = SparkSession.builder \
         .master("local") \
-        .appName("rdd examples ver") \
+        .appName("log dataframe ex") \
         .getOrCreate()
 
     # define schema
