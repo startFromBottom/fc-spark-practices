@@ -1,6 +1,8 @@
 name: Apache General Access
-file: /Users/eomhyeonho/Workspace/spark-practice2/logs/log.txt # update to your path
-format: "{log_ip} | [{log_time}] | \"{log_method} {log_path} HTTP/1.1\" | {log_status}"
+# file: /Users/eomhyeonho/Workspace/spark-practice/2_rdd_examples/data/log.txt # update to your path (for rdd example
+file: /Users/eomhyeonho/Workspace/spark-practices/3_sparksql_examples/data/log.csv # update to your path (for sparksql example)
+#format: "{log_ip} | [{log_time}] | \"{log_method} {log_path} HTTP/1.1\" | {log_status}" # for rdd example
+format: "{log_ip},{log_time},{log_method},{log_path},{log_status},{latency}" # for spark sql example
 frequency:
   seconds: 0.5
 offset:
@@ -13,7 +15,8 @@ fields:
     type: ip
   log_time:
     type: timestamp
-    format: "%d/%b/%Y:%H:%M:%S"
+#    format: "%d/%b/%Y:%H:%M:%S" # for rdd examples
+    format: "%Y-%m-%d %H:%M:%S" # for sparksql examples
   log_method:
     type: enum
     values: [POST, GET, PUT, PATCH, DELETE]
@@ -37,3 +40,7 @@ fields:
     type: integer
     min: 2000
     max: 5000
+  latency:
+    type: integer
+    min: 1
+    max: 100
