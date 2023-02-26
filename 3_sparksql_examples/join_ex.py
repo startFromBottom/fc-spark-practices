@@ -8,7 +8,7 @@ from pyspark.sql.types import *
 """
 
 
-def load_user_names(ss: SparkSession):
+def load_user_visits(ss: SparkSession):
     schema = StructType([
         StructField("user_id", IntegerType(), False),
         StructField("visits", IntegerType(), False),
@@ -27,7 +27,7 @@ def load_user_names(ss: SparkSession):
     return ss.createDataFrame(data, schema)
 
 
-def load_user_visits(ss: SparkSession):
+def load_user_names(ss: SparkSession):
     schema = StructType([
         StructField("user_id", IntegerType(), False),
         StructField("name", StringType(), False),
