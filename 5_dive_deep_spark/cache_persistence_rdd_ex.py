@@ -21,5 +21,5 @@ if __name__ == "__main__":
     rdd.count()
 
     # 스크립트가 종료 되지 않도록 하여, spark web UI를 계속 확인할 수 있도록 함.
-    while True:
-        pass
+    # while True:
+    #     pass
