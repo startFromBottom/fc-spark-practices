@@ -1,6 +1,5 @@
 from pyspark import SparkContext, StorageLevel
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col
 
 if __name__ == "__main__":
     ss: SparkSession = SparkSession.builder \
