@@ -26,8 +26,7 @@ if __name__ == "__main__":
         .where("Pclass = 1") \
         .select("PassengerId", "Survived") \
         .coalesce(5) \
-        .where("Age >= 20")\
-
+        .where("Age >= 20") \
 
     # trigger action
     df.count()
