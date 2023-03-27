@@ -54,6 +54,10 @@ if __name__ == "__main__":
     # trigger action
     joined_df.count()
 
+    # join 과정 최적화
+    # 최적화 방법
+    #  1. uid 로 사전 정렬.
+    #  2. 데이터 저장 시, uid로 bucketing.
     users_df.orderBy(asc("uid")) \
         .write.format("parquet") \
         .bucketBy(8, "uid")\
