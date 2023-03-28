@@ -17,7 +17,7 @@ if __name__ == "__main__":
     small_list = [[1, "A"], [2, "B"], [3, "C"], ]
     small_df = ss.createDataFrame(small_list).toDF("id", "name")
 
-    joined_df = big_df.join(broadcast(small_df))
+    joined_df = big_df.join(broadcast(small_df), on="id")
 
     joined_df.show()
 
