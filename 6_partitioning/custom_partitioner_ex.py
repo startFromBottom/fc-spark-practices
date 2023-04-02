@@ -22,8 +22,7 @@ def print_partitions_info(df: DataFrame):
 if __name__ == "__main__":
     ss: SparkSession = SparkSession.builder \
         .master("local") \
-        .appName("sort_merge_join_ex") \
-        .config("spark.sql.adaptive.enabled", False) \
+        .appName("custom_partitioner_ex") \
         .getOrCreate()
 
     subjects = ["Math", "English", "Science"]
