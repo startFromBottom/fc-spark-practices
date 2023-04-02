@@ -66,4 +66,4 @@ if __name__ == "__main__":
                                      % num_partitions)
     custom_df.orderBy("id").show()
 
-    custom_df.explain()
+    print_partitions_info(df.repartition(3, "Partition#"))
