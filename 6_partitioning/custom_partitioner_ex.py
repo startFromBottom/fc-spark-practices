@@ -23,6 +23,7 @@ if __name__ == "__main__":
     ss: SparkSession = SparkSession.builder \
         .master("local") \
         .appName("sort_merge_join_ex") \
+        .config("spark.sql.adaptive.enabled", False) \
         .getOrCreate()
 
     subjects = ["Math", "English", "Science"]
@@ -42,9 +43,8 @@ if __name__ == "__main__":
     # English, Science subject 의 hash 값을 3으로 나눈 나머지가 같기 때문에,
     # English, Science 는 같은 Partition으로 들어가게 됨.
     # -> skewed partition의 원인이 될 수 있음!
-    udf_portable_hash = F.udf(lambda s: portable_hash(s))
     score_df = score_df.withColumn("Hash#",
-                                   udf_portable_hash(score_df.subject))
+                                   F.hash(score_df.subject))
     score_df = score_df.withColumn("Partition#", score_df["Hash#"] % 3)
     score_df.orderBy("id").show()
     score_df.explain()
