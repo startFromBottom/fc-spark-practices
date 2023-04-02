@@ -5,7 +5,8 @@ if __name__ == "__main__":
     ss: SparkSession = SparkSession.builder \
         .master("local[4]") \
         .config("spark.sql.join.preferSortMergeJoin", True) \
-        .config("spark.sql.autoBroadcastJoinThreshold", -1) \
+        .config("spark.sql.autoBroadcastJoinThreshold", -1)\
+        .config("spark.sql.adaptive.enabled", False) \
         .appName("bucketby_join ex") \
         .getOrCreate()
 
@@ -27,7 +28,9 @@ if __name__ == "__main__":
     df1.write.bucketBy(5, "id") \
         .mode("overwrite").saveAsTable("df1_bucket")
 
-    df2.write.bucketBy(6, "id") \
+    # 주의) df1, df2의 numBuckets를 같게 세팅해야, join 연산에서
+    # shuffle이 발생하지 않음,
+    df2.write.bucketBy(5, "id") \
         .mode("overwrite").saveAsTable("df2_bucket")
 
     bucket_df1 = ss.read.table("df1_bucket")
