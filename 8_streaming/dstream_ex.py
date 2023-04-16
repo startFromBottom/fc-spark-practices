@@ -25,14 +25,6 @@ if __name__ == "__main__":
     def read_from_file():
         stocks_file_path = "data/stocks"
         text_stream: DStream[str] = ssc.textFileStream(stocks_file_path)
-
-        def transform(line):
-
-            return line
-
-        # transformation
-        # stocks_stream = text_stream.map(transform)
-
         # action
         text_stream.pprint()
 
