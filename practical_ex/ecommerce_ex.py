@@ -154,8 +154,7 @@ if __name__ == '__main__':
 
     # 3. write datas
 
-    # cassandra
-    #
+    # 3.1 cassandra
     # config : https://github.com/datastax/spark-cassandra-connector/blob/master/doc/reference.md#configuration-reference
     final_df.write \
         .format("org.apache.spark.sql.cassandra") \
@@ -164,4 +163,9 @@ if __name__ == '__main__':
         .option("table", "central_catalog") \
         .option("spark.cassandra.output.consistency.level", "ONE") \
         .save()
+
+    # 3.2 apache iceberg (현재 코드에서 로컬에서는 실행 불가, iceberg docker container 위에서 실행 필요.
+    # Spark DataFrame의 schema 대로 iceberg table을 생성
+    # DDL 문을 이용해 iceberg table을 생성하는 것도 가능.
+    final_df.write.saveAsTable("fc_catalogs.central_catalog")
 
