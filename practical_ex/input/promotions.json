@@ -1,0 +1,3 @@
+{"promotion_id":1,"name":"5월 한정 초특가 할인","discount_rate":0.3,"start_date":"2023-05-01 00:00:00","end_date":"2023-05-31 23:59:59"},
+{"promotion_id":2,"name":"신학기 프로모션","discount_rate":0.15,"start_date":"2023-03-01 00:00:00","end_date":"2023-03-10 23:59:59"},
+{"promotion_id":3,"name":"블랙프라이데이 특가","discount_rate":0.2,"start_date":"2022-11-01 00:00:00","end_date":"2022-11-14 00:00:00"},

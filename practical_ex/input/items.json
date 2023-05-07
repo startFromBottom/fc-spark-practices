@@ -1,0 +1,7 @@
+{"item_id":1,"product_id":1,"seller_id":1,"promotion_ids":[1],"original_title":"Iphone14","search_tag":["아이폰","아이폰14","아이폰 최신"],"price":1000000, "create_timestamp":1681084800,"update_timestamp":1683373422,"attrs":{"color":"red","disk":"64GB","ram":"8GB"},"free_shipping":true}
+{"item_id":2,"product_id":1,"seller_id":1,"promotion_ids":[1],"original_title":"Iphone14 Pro","search_tag":["아이폰","아이폰14pro","최신아이폰"],"price":1300000,"create_timestamp":1681344000,"update_timestamp":1683373422,"attrs":{"color":"blue","disk":"128GB","ram":"16GB"},"free_shipping":true}
+{"item_id":3,"product_id":1,"seller_id":2,"promotion_ids":[],"original_title":"Iphone14 Pro","search_tag":["아이폰","아이폰14pro","아이폰 14","Iphone","Iphone14"],"price":1300000, "create_timestamp":1679100600,"update_timestamp":1683373422,"attrs":{"color":"blue","disk":"128GB","ram":"16GB"},"free_shipping":false}
+{"item_id":4,"product_id":2,"seller_id":1,"promotion_ids":[3],"original_title":"M1 Macbook Pro","search_tag":["맥북","맥북프로","M1맥북","Mackbook"],"price":2000000, "create_timestamp":1681084800,"update_timestamp":1683373422,"attrs":{"color":"silver","disk":"512GB","ram":"16GB"},"free_shipping":true}
+{"item_id":5,"product_id":2,"seller_id":1,"promotion_ids":[2],"original_title":"M1 Macbook Pro","search_tag":["Mackbook","맥북 프로","맥북","맥","MAC"],"price":2500000, "create_timestamp":1681084800,"update_timestamp":1683373422,"attrs":{"color":"space grey","disk":"512GB","ram":"24GB"},"free_shipping":true}
+
+
